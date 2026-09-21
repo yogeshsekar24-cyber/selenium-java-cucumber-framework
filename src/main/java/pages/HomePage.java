@@ -1,6 +1,6 @@
 package pages;
 
-import java.time.Duration;
+
 
 import org.openqa.selenium.By;
 
@@ -8,10 +8,14 @@ import base.BaseTest;
 
 public class HomePage extends BaseTest{
 	By account = By.xpath("//span[@class='account']");
+	By myaccount = By.xpath("//button[@class='loggedin-button']");
+	By username = By.xpath("//li[@class=\"user user-name\"]");
 	public void click_on_account_button() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.findElement(account).click();
-		
+		wait.waitForVisibility(account).click();
 	}
-
+	public void click_on_myaccount_and_get_homepage_url() {
+		wait.waitForVisibility(myaccount).click();
+		String hompage = driver.getCurrentUrl();
+		System.out.println(hompage);
+		}
 }

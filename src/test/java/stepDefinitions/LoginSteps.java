@@ -20,11 +20,6 @@ public class LoginSteps{
     public void user_enters_valid_email_and_password(String username, String password) {
     	
     	log.enter_user_name_and_password(username, password);
-    	
-    	
-    	
-//        System.out.println("Username: " + username);
-//        System.out.println("Password: " + password);
     }
 
     @And("user clicks on Sign in button")
@@ -37,12 +32,11 @@ public class LoginSteps{
     @Then("check whether user successfully navigated to home page")
     public void check_whether_user_successfully_navigated_to_home_page() {
 
-        System.out.println("Check whether user successfully navigated to home page");
+        home.click_on_myaccount_and_get_homepage_url();
     }
 
     @Then("user gets error message in login page")
     public void check_whether_user_gets_error_message_in_login_page() {
-
-        System.out.println("Check whether user gets error message in login page");
+log.check_error_message();
     }
 }
