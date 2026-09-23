@@ -21,9 +21,22 @@ public class Hooks {
 	@Before
 	public void setup() {
 		System.out.println("executing @before method in HOOKS");
-		String browser = ConfigReader.getProperty("browser");
-		DriverFactory.initializeDriver(browser);
-		DriverFactory.getDriver().get(ConfigReader.getProperty("url"));
+
+    String browser = ConfigReader.getProperty("browser");
+    String url = ConfigReader.getProperty("url");
+
+    System.out.println("Browser: " + browser);
+    System.out.println("URL: " + url);
+
+    DriverFactory.initializeDriver(browser);
+
+    DriverFactory.getDriver().get(url);
+
+    System.out.println("Current URL: "
+            + DriverFactory.getDriver().getCurrentUrl());
+
+    System.out.println("Page title: "
+            + DriverFactory.getDriver().getTitle());
 
 	}
 
