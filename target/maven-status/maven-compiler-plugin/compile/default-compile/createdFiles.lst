@@ -1,0 +1,6 @@
+base\BaseTest.class
+utilies\ConfigReader.class
+base\DriverFactory.class
+pages\LoginPage.class
+pages\HomePage.class
+utilies\WaitUtils.class
