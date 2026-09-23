@@ -1,0 +1,18 @@
+package base;
+
+import org.openqa.selenium.WebDriver;
+
+import utilies.ScreenshotUtils;
+import utilies.WaitUtils;
+
+public class BaseTest {
+	protected WebDriver driver;
+	protected WaitUtils wait;
+	ScreenshotUtils screenshot;
+	
+	public  BaseTest() {
+driver = DriverFactory.getDriver();
+wait = new WaitUtils(driver);
+screenshot =new ScreenshotUtils(driver);
+	}	
+}
