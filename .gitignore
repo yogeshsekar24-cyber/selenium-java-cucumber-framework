@@ -1,17 +1,3 @@
-# Maven
+.metadata/
 target/
-
-# TestNG reports
-test-output/
-
-# Eclipse
-.classpath
-.project
-.settings/
-
-# Java
 *.class
-
-# IDE
-.idea/
-*.iml
