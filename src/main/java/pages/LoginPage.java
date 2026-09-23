@@ -12,6 +12,8 @@ public class LoginPage extends BaseTest{
 	
 
 	public void enter_user_name_and_password(String user,String pass) {
+		
+System.out.println("Executing login page class enter user name and password");
 		wait.waitForVisibility(username).sendKeys(user);
 		driver.findElement(password).sendKeys(pass);	
 	}

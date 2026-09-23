@@ -12,6 +12,7 @@ public class DriverFactory {
 	public static void initializeDriver(String browser) {
 		
 	    WebDriver webDriver = null;
+	    System.out.println("Executing driver initialization");
 		
 		if(browser.equals("Chrome")) {
 			webDriver = new ChromeDriver();
@@ -29,7 +30,7 @@ public class DriverFactory {
 		driver.set(webDriver);
 	}
 	public static WebDriver getDriver() {
-		
+		System.out.println("returing driver");
 		return driver.get();
 		
 	}

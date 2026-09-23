@@ -12,13 +12,17 @@ public class Hooks {
 	
 	@Before
 	public void setup() {
+		System.out.println("executing @before method in HOOKS");
 		String browser = ConfigReader.getProperty("browser");
  		DriverFactory.initializeDriver(browser);
 		DriverFactory.getDriver().get(ConfigReader.getProperty("url"));
+		
 	}
 	@After
 	public void tearDown() {
+		System.out.println("executing @before method in HOOKS");
 		DriverFactory.quitDriver();
+		
 	}
 
 }

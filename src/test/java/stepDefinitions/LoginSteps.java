@@ -12,30 +12,34 @@ public class LoginSteps{
 
     @Given("user clicks on Account button and lands on login page")
     public void clicks_on_account_button_and_lands_on_login_page() {
-    	
+    	System.out.println("executing user clicks on Account button and lands on login page");
     	home.click_on_account_button();
     }
 
     @When("user enters valid email ID {string} and password {string}")
     public void user_enters_valid_email_and_password(String username, String password) {
-    	
+    	System.out.println("executing user enters valid email ID {string} and password {string}");
     	log.enter_user_name_and_password(username, password);
     }
 
     @And("user clicks on Sign in button")
     public void user_clicks_on_sign_in_button() {
+    	
+    	System.out.println("executing user clicks on Sign in button");
     	log.click_on_signIn_button();
 
     }
 
     @Then("check whether user successfully navigated to home page")
     public void check_whether_user_successfully_navigated_to_home_page() {
-
+    	System.out.println("executing check whether user successfully navigated to home page");
         home.click_on_myaccount_and_get_homepage_url();
     }
 
     @Then("user gets error message in login page")
     public void check_whether_user_gets_error_message_in_login_page() {
+    	
+    	System.out.println("executing user gets error message in login page");
 log.check_error_message();
     }
 }
