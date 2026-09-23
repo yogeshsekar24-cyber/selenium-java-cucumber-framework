@@ -16,7 +16,10 @@ public class DriverFactory {
 	    System.out.println("Executing driver initialization");
 		
 		if(browser.equals("Chrome")) {
-			webDriver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless=new");
+			options.addArguments("--window-size=1920,1080");
+			webDriver = new ChromeDriver(options);
 		}
 		else if(browser.equals("Firefox")){
 			webDriver = new FirefoxDriver();
