@@ -1,8 +1,11 @@
 pipeline {
     agent any
 
-    stages {
+    tools {
+        maven 'Maven'
+    }
 
+    stages {
         stage('Checkout') {
             steps {
                 echo 'Checking out source code from GitHub'
