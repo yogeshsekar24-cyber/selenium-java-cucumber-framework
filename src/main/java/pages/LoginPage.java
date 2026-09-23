@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 
 import base.BaseTest;
-import utilies.WaitUtils;
 
 public class LoginPage extends BaseTest{
 	By username = By.xpath("//input[@id='username']");
@@ -14,18 +13,13 @@ public class LoginPage extends BaseTest{
 
 	public void enter_user_name_and_password(String user,String pass) {
 		wait.waitForVisibility(username).sendKeys(user);
-		wait.waitForVisibility(password).sendKeys(pass);
-		//driver.findElement(username).sendKeys(user);
-		//driver.findElement(password).sendKeys(pass);
-		
+		driver.findElement(password).sendKeys(pass);	
 	}
 	public void click_on_signIn_button() {
-		driver.findElement(signInButton);
+		driver.findElement(signInButton).click();
 	}
-	
 	public void check_error_message() {
 		String errormessage = wait.waitForVisibility(warningMessage).getText();
 		System.out.println(errormessage);
 	}
-
 }

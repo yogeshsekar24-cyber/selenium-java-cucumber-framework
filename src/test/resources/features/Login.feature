@@ -13,7 +13,7 @@ Then check whether user successfully navigated to home page
 Examples:
 
 | username                  | password |
-| us-dist1101@mailinator.com | Zaq12wsx |
+| 04us-dist20@mailinator.com | Zaq12wsx |
 
 @test
 Scenario Outline:unsuccessful login

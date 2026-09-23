@@ -26,7 +26,6 @@ public class LoginSteps{
     public void user_clicks_on_sign_in_button() {
     	log.click_on_signIn_button();
 
-        System.out.println("User clicks on Sign in button");
     }
 
     @Then("check whether user successfully navigated to home page")

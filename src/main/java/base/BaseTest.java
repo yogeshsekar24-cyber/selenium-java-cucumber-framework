@@ -11,6 +11,5 @@ public class BaseTest {
 	public  BaseTest() {
 driver = DriverFactory.getDriver();
 wait = new WaitUtils(driver);
-	}
-	
+	}	
 }
