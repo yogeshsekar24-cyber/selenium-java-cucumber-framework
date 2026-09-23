@@ -26,7 +26,7 @@ public class DriverFactory {
 		else {
 			System.out.println("Enter the valid browser");
 		}
-		webDriver.manage().window().maximize();
+		webDriver.manage().window().setSize(new Dimension(1920, 1080));
 		driver.set(webDriver);
 	}
 	public static WebDriver getDriver() {
