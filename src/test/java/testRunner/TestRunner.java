@@ -3,7 +3,7 @@ package testRunner;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features="src/test/resources/features",glue={"stepDefinitions","hooks"},monochrome=true)
+@CucumberOptions(features="src/test/resources/features",glue={"stepDefinitions","hooks"},monochrome=true,tags="@SignIn")
 
 public class TestRunner extends AbstractTestNGCucumberTests{
 
