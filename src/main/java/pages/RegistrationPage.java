@@ -71,9 +71,12 @@ public class RegistrationPage extends BaseTest {
 	 wait.waitForVisibility((By.xpath("//input[@id='search']"))).sendKeys(email);
 	 driver.findElement(By.xpath("//button[normalize-space()='GO']")).click();
 	 wait.waitForVisibility(By.xpath("//td[normalize-space()='Agilent One-time verification code']")).click();
+	 wait.waitForVisibility(By.xpath("//iframe[@id='html_msg_body']"));
+	 driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='html_msg_body']")));
 	 String otp = wait.waitForVisibility(By.xpath("//span[@id='verification-code']")).getText();
+	 driver.switchTo().defaultContent();
 	 driver.switchTo().window(appwindow);
-	 for(int i=0;i<=otp.length()-1;i++) {
+	 for(int i=0;i<otp.length();i++) {
 		 String digit = String.valueOf(otp.charAt(i));
 		 wait.waitForVisibility(By.xpath("//input[contains(@aria-label,'One Time Password Input Number "+(i+1)+"')]")).sendKeys(digit);
 	 }
