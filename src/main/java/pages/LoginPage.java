@@ -9,6 +9,7 @@ public class LoginPage extends BaseTest{
 	By password = By.xpath("//input[@id='password']");
 	By signInButton = By.xpath("//button[@type='submit']");
 	By warningMessage = By.xpath("//div[@class='warning-box']");
+	By createaccount = By.xpath("//a[normalize-space()='Create a new account']");
 	
 
 	public void enter_user_name_and_password(String user,String pass) {
@@ -24,4 +25,7 @@ System.out.println("Executing login page class enter user name and password");
 		String errormessage = wait.waitForVisibility(warningMessage).getText();
 		System.out.println(errormessage);
 	}
+	public void click_on_create_account() {
+		wait.waitForVisibility(createaccount).click();
+		}
 }
