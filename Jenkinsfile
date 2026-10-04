@@ -4,6 +4,8 @@ pipeline {
     tools {
         maven 'Maven'
     }
+    
+    parameters { choice( name: 'BROWSER', choices: ['chrome', 'firefox', 'edge'], description: 'Select browser to execute the tests' ) choice( name: 'TAG', choices: ['@login', '@smoke', '@regression'], description: 'Select Cucumber tag to execute' ) }
 
     stages {
         stage('Checkout') {
@@ -14,7 +16,7 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-                bat 'mvn clean test'
+                echo "Browser: ${params.BROWSER}" echo "Cucumber Tag: ${params.TAG}" bat "mvn clean test -Dbrowser=${params.BROWSER} -Dcucumber.filter.tags=\"${params.TAG}\""
             }
         }
     }

@@ -22,7 +22,7 @@ public class Hooks {
 	public void setup() {
 		System.out.println("executing @before method in HOOKS");
 
-    String browser = ConfigReader.getProperty("browser");
+    String browser = System.getProperty("browser",ConfigReader.getProperty("browser"));
     String url = ConfigReader.getProperty("url");
 
     System.out.println("Browser: " + browser);
