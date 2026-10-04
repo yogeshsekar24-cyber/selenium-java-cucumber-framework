@@ -1,7 +1,8 @@
 Feature: login validation
+
 Background:
 Given user clicks on Account button and lands on login page
-
+@login
 Scenario Outline: Successful login
 
 When user enters valid email ID "<username>" and password "<password>"
