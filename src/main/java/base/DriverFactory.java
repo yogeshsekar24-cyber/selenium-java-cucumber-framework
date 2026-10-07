@@ -14,13 +14,13 @@ public class DriverFactory {
 	    WebDriver webDriver = null;
 	    System.out.println("Executing driver initialization");
 		
-		if(browser.equals("Chrome")) {
+		if(browser.equalsIgnoreCase("Chrome")) {
 			webDriver = new ChromeDriver();
 		}
-		else if(browser.equals("Firefox")){
+		else if(browser.equalsIgnoreCase("Firefox")){
 			webDriver = new FirefoxDriver();
 		}
-		else if(browser.equals("Edge")) {
+		else if(browser.equalsIgnoreCase("Edge")) {
 			webDriver = new EdgeDriver();
 		}
 		else {

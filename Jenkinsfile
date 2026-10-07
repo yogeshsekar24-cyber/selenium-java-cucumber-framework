@@ -1,11 +1,6 @@
-```groovy
 pipeline {
 
     agent any
-
-    tools {
-        maven 'Maven'
-    }
 
     parameters {
 
@@ -26,11 +21,11 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                echo 'Checking out source code from GitHub'
+                checkout scm
             }
         }
 
-        stage('Build & Test') {
+        stage('Run Tests') {
             steps {
 
                 echo "Browser: ${params.BROWSER}"
@@ -40,5 +35,11 @@ pipeline {
             }
         }
     }
+
+    post {
+
+        always {
+            echo "Test execution completed"
+        }
+    }
 }
-```
